@@ -1,7 +1,25 @@
-import React, { useState } from 'react'
-import { weatherImages } from '../helpers/weatherImages'
+import React from 'react'
+import { getImage } from '../helpers/getImage'
 
-export const CurrentsWeatherScreen = () => {
+export const TodayScreen = ({
+    city,
+    weather,
+    setCoords,
+    setLoadingCoords,
+}) => {
+
+    const getCoords = () => {
+        setLoadingCoords(true)
+        navigator.geolocation.getCurrentPosition( ({coords}) => {
+            setCoords({
+                lat: coords.latitude,
+                lng: coords.longitude,
+            })
+            setLoadingCoords(false)
+        } )
+
+    }
+    
 
     return (
         <aside className="weather__sidebar">
@@ -14,6 +32,7 @@ export const CurrentsWeatherScreen = () => {
 
                 <button
                     className="location-btn btn"
+                    onClick={ getCoords }
                 >
                     <span className="material-icons gps-btn">
                         my_location
@@ -22,7 +41,7 @@ export const CurrentsWeatherScreen = () => {
             </div>
 
             <div className="weather__sidebar-image">
-                <img src={ weatherImages(`./Clear.png`).default } alt="" />
+                <img src={ getImage("sn") } alt="" />
             </div>
 
             <div className="weather__sidebar-info">
@@ -35,7 +54,7 @@ export const CurrentsWeatherScreen = () => {
                     <span>Fri. 5 Jun</span>
                 </div>
                 <span className="city">
-                    <span className="material-icons">location_on</span>Ciudad actual
+                    <span className="material-icons">location_on</span>{ city }
                 </span>
             </div>
         </aside>

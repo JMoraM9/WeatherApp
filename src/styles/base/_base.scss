@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;600&display=swap');
+
+* {
+    font-family: Raleway;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: $bg-dark;
+    color: $letters-color
+}
+
+.btn {
+    border: none;
+    background-color: transparent;
+    color: $letters-color;
+    margin: 1rem 0.5rem;
+}

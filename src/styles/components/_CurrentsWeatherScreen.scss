@@ -1,0 +1,77 @@
+
+.weather__sidebar{
+    background-color: $bg-light;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    &-navbar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        
+        .search-btn {
+            background-color: $button-bg;
+        }
+
+        .location-btn {
+            padding: 0;
+            background-color: $button-bg;
+            border-radius: 100px;
+            width: 40px;
+            height: 40px;
+
+            span {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+            }
+        }
+    }
+
+    &-image {
+        height: 35vh;
+        display: flex;
+        align-items: center;
+    }
+
+    &-info {
+        text-align: center;
+
+        .temperature {
+            font-size: 8rem;
+            margin-bottom: 2.5rem;
+
+            .unity {
+                font-size: 3rem;
+                opacity: 0.7;
+                font-weight: 100;
+            }
+        }
+
+        .weather {
+            font-size: 2.5rem;
+            opacity: 0.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .date {
+            display: flex;
+            justify-content: space-between;
+            color: $letters-color-grey;
+            margin-bottom: 2rem;
+        }
+
+        .city {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $letters-color-grey;
+        }
+    }
+
+}

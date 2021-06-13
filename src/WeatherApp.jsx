@@ -12,7 +12,7 @@ export const WeatherApp = () => {
 
     const Mapbox_url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${coords.lng}, ${coords.lat}.json?access_token=pk.eyJ1IjoianJtb3JhbSIsImEiOiJja3ByNWo5ZGIwMXNqMnVtdmc3YWNta3l5In0.Sb5b6IfOFX1286wMXBqNxA&limit=1&types=place`;
 
-    const OpenWeather_url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=f0fb9d9d214577295562f8baa54b5fc2`;
+    const OpenWeather_url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=f0fb9d9d214577295562f8baa54b5fc2&units=metric`;
 
     const [, getLocation] = useAxios( Mapbox_url, { manual: true } );
 
@@ -20,7 +20,8 @@ export const WeatherApp = () => {
 
     useEffect(() => {
         getWeather()
-            .catch( (err) => console.log(err) )
+            .catch( (err) => console.log(err) );
+        
     }, [city])
 
     useEffect(() => {
@@ -34,12 +35,13 @@ export const WeatherApp = () => {
         }
     }, [coords, getLocation, getWeather])
 
-    console.log(data);
+    console.log(coords);
 
     return (
         <>
             <TodayScreen
-            city={ city }
+                weather={ data?.weather }
+                city={ city }
                 setCoords={ setCoords } 
                 setLoadingCoords={ setLoadingCoords }
             />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { getImage } from '../helpers/getImage'
 
 export const TodayScreen = ({
@@ -20,6 +20,7 @@ export const TodayScreen = ({
 
     }
     
+    // console.log( weather );
 
     return (
         <aside className="weather__sidebar">
@@ -48,7 +49,7 @@ export const TodayScreen = ({
                 <h2 className="temperature">
                     15<span className="unity">&deg;C</span>
                 </h2>
-                <h3 className="weather">Soleado</h3>
+                <h3 className="weather">{ weather?weather[0].main:'hola'}</h3>
                 <div className="date">
                     <span>Viernes</span>
                     <span>Fri. 5 Jun</span>

@@ -27,6 +27,7 @@ export const WeatherApp = () => {
 
                 <HighlightsScreen />
             </weatherContext.Provider>
+
         </>
     )
 }

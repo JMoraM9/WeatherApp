@@ -1,0 +1,50 @@
+.highlight__card {
+    background-color: $bg-light;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 9rem;
+    border-radius: 7px;
+
+    &-title {
+        text-transform: capitalize;
+        margin-top: 1rem;
+        font-weight: 500;
+        color: $letters-color-grey;
+        font-size: 1.2rem;
+    }
+
+    &-info {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        font-weight:900;
+    }
+}
+
+.units {
+    font-size: 2rem;
+}
+
+.humidity__bar {
+    width: 80%;
+    height: 0.5rem;
+    background-color: $letters-color;
+    border-radius: 7px;
+    position: relative;
+    margin-bottom: 2rem;
+
+    &-filled {
+        width: 0%;
+        background-color: #FFEC65;
+        height: 100%;
+        transition: width 2s;
+    }
+
+    &-text {
+        display: flex;
+        color: $letters-color;
+        font-size: 0.7rem;
+        justify-content: space-between;
+    }
+}

@@ -1,4 +1,7 @@
 @import './base/settings';
 @import './base/base';
 
-@import './components/CurrentsWeatherScreen'
+@import './components/TodayScreen';
+@import './components/highlights/HighlightsScreen';
+@import './components/highlights/HighlightCard';
+@import './components/forecast/WeekScreen.scss';

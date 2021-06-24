@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0.5rem;
+    // padding: 0.5rem;
     
     &-navbar {
         width: 100%;
@@ -39,9 +39,12 @@
     }
 
     &-image {
+        width:100%;
         height: 35vh;
         display: flex;
         align-items: center;
+        justify-content: center;
+
     }
 
     &-info {
@@ -50,7 +53,7 @@
 
         .temperature {
             font-size: 8rem;
-            margin-bottom: 2rem;
+            font-weight: 500;
 
             .unity {
                 font-size: 3rem;
@@ -81,4 +84,9 @@
         }
     }
 
+}
+
+.cloudy {
+    background: linear-gradient(10deg, #1e213aec, #1e213aec), url(../../assets/images/Cloud-background.png) no-repeat center center;
+        background-size: cover;
 }

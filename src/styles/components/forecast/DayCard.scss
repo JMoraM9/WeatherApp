@@ -1,0 +1,37 @@
+.card__container {
+    background-color: $bg-light;
+    width: 8rem;
+    min-height: 12rem;
+    margin: 0.7rem 0;
+    border-radius: 7px;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: 300;
+
+
+    &-date {
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 300;
+
+    }
+
+    &-image {
+        text-align: center;
+        img {
+            width: 60%;
+        }
+    }
+
+    &-temperatures {
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: space-around;
+
+        .min-temp {
+            color: $letters-color-grey;
+        }
+    }
+}

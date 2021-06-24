@@ -16,7 +16,7 @@ export const WeekScreen = () => {
 
                 try {
                     
-                    const forecastAPI = `https://api.openweathermap.org/data/2.5/forecast?q=Medellin&appid=27a6590f81ac6c5f728e8b50872237b9&units=metric`;
+                    const forecastAPI = `https://api.openweathermap.org/data/2.5/forecast?q=${ state.city }&appid=27a6590f81ac6c5f728e8b50872237b9&units=metric`;
             
                     const forecastResponse = await fetch(forecastAPI);
                     const { list } = await forecastResponse.json();
@@ -47,6 +47,7 @@ export const WeekScreen = () => {
                         key={ day.dt }
                         date={ day.dt_txt }
                         description={ day.weather[0].description }
+                        weatherId = { day.weather[0].id }
                         minTemp={ Math.round(day.main.temp_min) }
                         maxTemp={ Math.round(day.main.temp_max) }
                     />

@@ -71,10 +71,12 @@ export const TodayScreen = () => {
                     });
                     const resp = await instance.get();
                     const {wind, visibility, main, weather} = await resp.data;
+                    console.log(weather);
                     dispatch({
                         type: types.getWeather,
                         payload: {
                             description: weather[0].description,
+                            id: weather[0].id,
                             temperature: Math.round(main.temp),
                             windStatus: (wind.speed*1).toFixed(2),
                             airPressure: (main.grnd_level*0.00098692).toFixed(2),
@@ -116,15 +118,15 @@ export const TodayScreen = () => {
                 </button>
             </div>
 
-            <div className="weather__sidebar-image">
-                <img src={ getImage( state.weather?.description ) } alt={`${ state.weather?.description }`} />
+            <div className={ `weather__sidebar-image ${ state.weather?.description.includes('clouds') ? 'cloudy' : null }` }>
+                <img src={ getImage( state.weather?.id ) } alt={`${ state.weather?.description }`} />
             </div>
 
             <div className="weather__sidebar-info">
-                <h2 className="temperature">
+                <span className="temperature">
                     { state.weather?.temperature }
                     <span className="unity">&deg;C</span>
-                </h2>
+                </span>
                 <h3 className="weather">{ state.weather?.description }</h3>
                 <div className="date">
                     <span>Today</span>

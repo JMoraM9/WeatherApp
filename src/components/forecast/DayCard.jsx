@@ -6,6 +6,7 @@ import { getImage } from '../../selectors/getImage'
 export const DayCard = ({
     date,
     description,
+    weatherId,
     minTemp,
     maxTemp,
 }) => {
@@ -16,13 +17,22 @@ export const DayCard = ({
             </h3>
 
             <div className="card__container-image">
-                <img src={ getImage( description )} alt={ description } />
-                { description }
+                <img src={ getImage( weatherId )} alt={ description } />
             </div>
 
             <div className="card__container-temperatures">
-                <span className="max-temp">{ maxTemp }</span>
-                <span className="min-temp">{ minTemp }</span>
+                <span className="max-temp">
+                    { maxTemp }
+                    <span className="unit">
+                        °C
+                    </span>
+                </span>
+                <span className="min-temp">
+                    { minTemp }
+                    <span className="unit">
+                        °C
+                    </span>
+                </span>
             </div>
             
         </div>

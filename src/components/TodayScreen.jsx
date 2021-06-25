@@ -38,7 +38,7 @@ export const TodayScreen = () => {
                     
                     dispatch({
                         type: types.getCity,
-                    payload: features[0]?.text,
+                        payload: features[0]?.text,
                     });
 
                 } catch (error) {
@@ -77,7 +77,10 @@ export const TodayScreen = () => {
                             description: weather[0].description,
                             id: weather[0].id,
                             temperature: Math.round(main.temp),
-                            windStatus: (wind.speed*1).toFixed(2),
+                            windStatus: {
+                                speed: (wind.speed*1).toFixed(2),
+                                direction: wind.deg,
+                            },
                             airPressure: (main.grnd_level*0.00098692).toFixed(2),
                             humidity: main.humidity,
                             visibility: (visibility/1000),

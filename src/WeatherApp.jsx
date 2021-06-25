@@ -23,9 +23,11 @@ export const WeatherApp = () => {
             <weatherContext.Provider value={{ state, dispatch }}>
                 <TodayScreen />
                 
-                <WeekScreen />
+                <div className="main">
+                    <WeekScreen />
 
-                <HighlightsScreen />
+                    <HighlightsScreen />
+                </div>
             </weatherContext.Provider>
 
         </>

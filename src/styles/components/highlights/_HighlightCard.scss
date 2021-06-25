@@ -35,18 +35,50 @@
     border-radius: 7px;
     position: relative;
     margin-bottom: 2rem;
+    overflow: hidden;
+
 
     &-filled {
         width: 0%;
         background-color: #FFEC65;
         height: 100%;
-        transition: width 2s;
+        transition: width 1.5s ease-in-out;
+        border: solid 1px black;
+        border-radius: 7px;
+
     }
 
     &-text {
+        margin-top: 0.5rem;
         display: flex;
         color: $letters-color;
         font-size: 0.7rem;
         justify-content: space-between;
+    }
+}
+
+.wind-direction {
+    .circle {
+        background-color: $button-bg;
+        border-radius: 500px;
+        padding: 0.4rem;
+        margin-bottom: 1rem;
+
+        .navigation-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            transition: transform 1.5s ease-in-out;
+            color:  rgb(255, 255, 255);
+        }
+    }
+}
+
+@media ( min-width: 1080px ) {
+    .highlight__card {
+        width: 40%;
+
+        
     }
 }

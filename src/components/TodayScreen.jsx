@@ -71,7 +71,6 @@ export const TodayScreen = () => {
                     });
                     const resp = await instance.get();
                     const {wind, visibility, main, weather} = await resp.data;
-                    console.log(weather);
                     dispatch({
                         type: types.getWeather,
                         payload: {

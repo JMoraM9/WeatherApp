@@ -1,0 +1,18 @@
+.highlights {
+    padding: 1.5rem 1rem;
+
+    &-title {
+        align-self: flex-start;
+        text-transform: capitalize;
+        margin-bottom: 1rem;
+    }
+    
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    
+}
